@@ -6,4 +6,6 @@
 int main()
 {
     Node *head = NULL;
+
+    head = createNode(10);
 }
