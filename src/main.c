@@ -7,5 +7,7 @@ int main()
 {
     Node *head = NULL;
 
-    head = createNode(10);
+    createNode(&head, 10);
+    
+    printf("%d\n", head->data);
 }

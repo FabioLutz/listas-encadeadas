@@ -4,4 +4,4 @@ typedef struct List
     struct List *next;
 } Node;
 
-Node *createNode(int value);
+void createNode(Node **node, int value);

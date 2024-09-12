@@ -3,10 +3,9 @@
 
 #include "linkedList.h"
 
-Node *createNode(int value)
+void createNode(Node **node, int value)
 {
-    struct List *newNode = (struct List *)malloc(sizeof(struct List));
-    newNode->data = value;
-    newNode->next = NULL;
-    return newNode;
+    *node = (struct List *)malloc(sizeof(struct List));
+    (*node)->data = value;
+    (*node)->next = NULL;
 }
