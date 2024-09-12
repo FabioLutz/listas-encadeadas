@@ -20,10 +20,10 @@ $(TARGET): $(OBJ)
 	$(CC) -g -o $(TARGET_DIR)/$@ $(addprefix $(OBJ_DIR)/, $^)
 
 dir:
-	mkdir $(SRC_DIR)
-	mkdir $(HEADER_DIR)
-	mkdir $(OBJ_DIR)
-	mkdir $(TARGET_DIR)
+	mkdir -p $(SRC_DIR)
+	mkdir -p $(HEADER_DIR)
+	mkdir -p $(OBJ_DIR)
+	mkdir -p $(TARGET_DIR)
 
 clean:
 	rm $(TARGET_DIR)/* $(OBJ_DIR)/*
