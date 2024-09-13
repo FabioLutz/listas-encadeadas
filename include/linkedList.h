@@ -6,3 +6,4 @@ typedef struct List
 
 void createNode(Node **node, int value);
 void insertNode(Node **node, int value);
+void printList(Node **node);
