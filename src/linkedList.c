@@ -9,3 +9,18 @@ void createNode(Node **node, int value)
     (*node)->data = value;
     (*node)->next = NULL;
 }
+
+void insertNode(Node **node, int value) {
+    if (*node == NULL) {
+        createNode(node, value);
+        return;
+    }
+
+    Node *temp = (*node);
+
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+
+    createNode(&temp->next, value);
+}

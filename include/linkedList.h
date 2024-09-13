@@ -5,3 +5,4 @@ typedef struct List
 } Node;
 
 void createNode(Node **node, int value);
+void insertNode(Node **node, int value);
