@@ -4,6 +4,6 @@ typedef struct List
     struct List *next;
 } Node;
 
-void createNode(Node **node, int value);
-void insertNode(Node **node, int value);
+void createListNode(Node **node, int value);
+void insertListNode(Node **node, int value);
 void printList(Node **node);

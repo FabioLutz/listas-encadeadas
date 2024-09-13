@@ -7,11 +7,11 @@ int main()
 {
     Node *head = NULL;
 
-    insertNode(&head, 10);
-    insertNode(&head, 20);
-    insertNode(&head, 30);
-    insertNode(&head, 40);
-    insertNode(&head, 50);
+    insertListNode(&head, 10);
+    insertListNode(&head, 20);
+    insertListNode(&head, 30);
+    insertListNode(&head, 40);
+    insertListNode(&head, 50);
     
     printList(&head);
 }

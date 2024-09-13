@@ -3,18 +3,18 @@
 
 #include "linkedList.h"
 
-void createNode(Node **node, int value)
+void createListNode(Node **node, int value)
 {
     *node = (struct List *)malloc(sizeof(struct List));
     (*node)->data = value;
     (*node)->next = NULL;
 }
 
-void insertNode(Node **node, int value)
+void insertListNode(Node **node, int value)
 {
     if (*node == NULL)
     {
-        createNode(node, value);
+        createListNode(node, value);
         return;
     }
 
@@ -25,7 +25,7 @@ void insertNode(Node **node, int value)
         temp = temp->next;
     }
 
-    createNode(&temp->next, value);
+    createListNode(&temp->next, value);
 }
 
 void printList(Node **node)
