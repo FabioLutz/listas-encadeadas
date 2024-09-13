@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Iinclude
+CFLAGS = -Iinclude -g
 SRC_DIR = src
 HEADER_DIR = include
 OBJ_DIR = build
@@ -17,7 +17,7 @@ run:
 	$(CC) $(CFLAGS) -c $< -o $(addprefix $(OBJ_DIR)/, $@)
 
 $(TARGET): $(OBJ)
-	$(CC) -g -o $(TARGET_DIR)/$@ $(addprefix $(OBJ_DIR)/, $^)
+	$(CC) $(CFLAGS) -o $(TARGET_DIR)/$@ $(addprefix $(OBJ_DIR)/, $^)
 
 dir:
 	mkdir -p $(SRC_DIR)
