@@ -30,8 +30,10 @@ void insertListNode(Node **node, int value)
 
 void printList(Node **node)
 {
-    while (*node != NULL) {
-        printf("%d\n", (*node)->data);
-        *node = (*node)->next;
+    Node *temp = (*node);
+
+    while (temp != NULL) {
+        printf("%d\n", temp->data);
+        temp = temp->next;
     }
 }

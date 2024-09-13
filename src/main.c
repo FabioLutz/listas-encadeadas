@@ -12,6 +12,7 @@ int main()
     insertListNode(&head, 30);
     insertListNode(&head, 40);
     insertListNode(&head, 50);
-    
+
+    printList(&head);
     printList(&head);
 }
