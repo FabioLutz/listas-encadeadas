@@ -7,12 +7,32 @@ int main()
 {
     Node *head = NULL;
 
-    insertListNode(&head, 10);
-    insertListNode(&head, 20);
-    insertListNode(&head, 30);
-    insertListNode(&head, 40);
-    insertListNode(&head, 50);
+    int value, choice;
 
-    printList(&head);
-    printList(&head);
+    do
+    {
+        printf("\n1 - Inserir valor\n2 - Imprimir lista\n0 - Sair");
+        printf("\nEscolha uma opção: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("\nInsira o valor: ");
+            scanf("%d", &value);
+            insertListNode(&head, value);
+            break;
+
+        case 2:
+            printList(&head);
+            break;
+
+        default:
+            if (choice != 0)
+            {
+                printf("\nValor inválido\n");
+            }
+            break;
+        }
+    } while (choice != 0);
 }
