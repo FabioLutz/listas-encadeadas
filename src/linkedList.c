@@ -75,3 +75,13 @@ void removeListNode(Node **node, int value)
         temp = temp->next;
     }
 }
+
+int listIsEmpty(Node **node)
+{
+    if (*node == NULL)
+    {
+        return 1;
+    }
+
+    return 0;
+}
