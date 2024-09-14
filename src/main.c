@@ -11,7 +11,7 @@ int main()
 
     do
     {
-        printf("\n1 - Inserir valor\n2 - Imprimir lista\n0 - Sair");
+        printf("\n1 - Inserir valor\n2 - Imprimir lista\n3 - Remover valor\n0 - Sair");
         printf("\nEscolha uma opção: ");
         scanf("%d", &choice);
 
@@ -25,6 +25,12 @@ int main()
 
         case 2:
             printList(&head);
+            break;
+
+        case 3:
+            printf("\nInsira o valor: ");
+            scanf("%d", &value);
+            removeListNode(&head, value);
             break;
 
         default:

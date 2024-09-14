@@ -32,8 +32,46 @@ void printList(Node **node)
 {
     Node *temp = (*node);
 
-    while (temp != NULL) {
+    while (temp != NULL)
+    {
         printf("%d\n", temp->data);
+        temp = temp->next;
+    }
+}
+
+void removeListNode(Node **node, int value)
+{
+
+    if (*node == NULL)
+    {
+        return;
+    }
+
+    Node *temp = (*node);
+
+    if (temp->data == value)
+    {
+        Node *newNext = temp->next;
+        free(temp);
+        *node = newNext;
+        return;
+    }
+
+    while (temp->next != NULL)
+    {
+        if (temp->next->data == value)
+        {
+            if (temp->next->next != NULL)
+            {
+                Node *newNext = temp->next->next;
+                free(temp->next);
+                temp->next = newNext;
+                return;
+            }
+            free(temp->next);
+            temp->next = NULL;
+            return;
+        }
         temp = temp->next;
     }
 }
