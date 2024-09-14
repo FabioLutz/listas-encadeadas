@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "linkedList.h"
+#include "linked_list.h"
 
 void createListNode(Node **node, int value)
 {
