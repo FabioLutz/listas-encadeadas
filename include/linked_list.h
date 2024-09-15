@@ -1,16 +1,16 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-typedef struct List
+typedef struct LinkedList
 {
     int data;
-    struct List *next;
-} Node;
+    struct LinkedList *next;
+} LinkedList;
 
-void createListNode(Node **node, int value);
-void insertListNode(Node **node, int value);
-void printList(Node **node);
-void removeListNode(Node **node, int value);
-int listIsEmpty(Node **node);
+void createLinkedListNode(LinkedList **linkedListNode, int value);
+void insertLinkedListNode(LinkedList **linkedListNode, int value);
+void printLinkedList(LinkedList **linkedListNode);
+void removeLinkedListNode(LinkedList **linkedListNode, int value);
+int linkedListIsEmpty(LinkedList **linkedListNode);
 
 #endif

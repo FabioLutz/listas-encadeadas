@@ -5,9 +5,9 @@
 
 int main()
 {
-    Node *head = NULL;
+    LinkedList *linkedList = NULL;
 
-    int value, choice;
+    int choice, value;
 
     do
     {
@@ -20,21 +20,21 @@ int main()
         case 1:
             printf("\nInsira o valor: ");
             scanf("%d", &value);
-            insertListNode(&head, value);
+            insertLinkedListNode(&linkedList, value);
             break;
 
         case 2:
-            printList(&head);
+            printLinkedList(&linkedList);
             break;
 
         case 3:
             printf("\nInsira o valor: ");
             scanf("%d", &value);
-            removeListNode(&head, value);
+            removeLinkedListNode(&linkedList, value);
             break;
 
         case 4:
-            printf("%s\n", listIsEmpty(&head) ? "verdadeiro" : "falso");
+            printf("%s\n", linkedListIsEmpty(&linkedList) ? "verdadeiro" : "falso");
             break;
 
         default:

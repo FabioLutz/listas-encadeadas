@@ -3,34 +3,34 @@
 
 #include "linked_list.h"
 
-void createListNode(Node **node, int value)
+void createLinkedListNode(LinkedList **linkedListNode, int value)
 {
-    *node = (struct List *)malloc(sizeof(struct List));
-    (*node)->data = value;
-    (*node)->next = NULL;
+    *linkedListNode = (struct LinkedList *)malloc(sizeof(struct LinkedList));
+    (*linkedListNode)->data = value;
+    (*linkedListNode)->next = NULL;
 }
 
-void insertListNode(Node **node, int value)
+void insertLinkedListNode(LinkedList **linkedListNode, int value)
 {
-    if (*node == NULL)
+    if (*linkedListNode == NULL)
     {
-        createListNode(node, value);
+        createLinkedListNode(linkedListNode, value);
         return;
     }
 
-    Node *temp = (*node);
+    LinkedList *temp = (*linkedListNode);
 
     while (temp->next != NULL)
     {
         temp = temp->next;
     }
 
-    createListNode(&temp->next, value);
+    createLinkedListNode(&temp->next, value);
 }
 
-void printList(Node **node)
+void printLinkedList(LinkedList **linkedListNode)
 {
-    Node *temp = (*node);
+    LinkedList *temp = (*linkedListNode);
 
     while (temp != NULL)
     {
@@ -39,21 +39,21 @@ void printList(Node **node)
     }
 }
 
-void removeListNode(Node **node, int value)
+void removeLinkedListNode(LinkedList **linkedListNode, int value)
 {
 
-    if (*node == NULL)
+    if (*linkedListNode == NULL)
     {
         return;
     }
 
-    Node *temp = (*node);
+    LinkedList *temp = (*linkedListNode);
 
     if (temp->data == value)
     {
-        Node *newNext = temp->next;
+        LinkedList *newNext = temp->next;
         free(temp);
-        *node = newNext;
+        *linkedListNode = newNext;
         return;
     }
 
@@ -63,7 +63,7 @@ void removeListNode(Node **node, int value)
         {
             if (temp->next->next != NULL)
             {
-                Node *newNext = temp->next->next;
+                LinkedList *newNext = temp->next->next;
                 free(temp->next);
                 temp->next = newNext;
                 return;
@@ -76,9 +76,9 @@ void removeListNode(Node **node, int value)
     }
 }
 
-int listIsEmpty(Node **node)
+int linkedListIsEmpty(LinkedList **linkedListNode)
 {
-    if (*node == NULL)
+    if (*linkedListNode == NULL)
     {
         return 1;
     }
