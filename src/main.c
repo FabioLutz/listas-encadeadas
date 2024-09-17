@@ -56,7 +56,8 @@ void executeQueue()
 
     do
     {
-        printf("\n1 - Inserir valor\n2 - Imprimir primeiro valor\n3 - Remover primeiro valor\n0 - Voltar\n");
+        printf("\n1 - Inserir valor\n2 - Imprimir primeiro valor\n3 - Remover primeiro valor\n4 - Verificar se está vazia");
+        printf("\n5 - Imprimir tamanho\n6 - Verificar se um valor está presente\n0 - Voltar\n");
         printf("Escolha uma opção: ");
         scanf("%d", &choice);
 
@@ -74,6 +75,20 @@ void executeQueue()
 
         case 3:
             dequeue(&queue);
+            break;
+
+        case 4:
+            printf("%s\n", queueIsEmpty(&queue) ? "Verdadeiro" : "Falso");
+            break;
+
+        case 5:
+            printf("%d\n", queueSize(&queue));
+            break;
+
+        case 6:
+            printf("\nInsira o valor: ");
+            scanf("%d", &value);
+            printf("%s\n", queueContains(&queue, value) ? "Verdadeiro" : "Falso");
             break;
 
         default:

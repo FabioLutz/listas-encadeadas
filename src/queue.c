@@ -50,3 +50,49 @@ void peek(Queue **queueNode)
         printf("%d\n", (*queueNode)->data);
     }
 }
+
+int queueIsEmpty(Queue **queueNode)
+{
+    if (*queueNode == NULL)
+    {
+        return 1;
+    }
+
+    return 0;
+}
+
+int queueContains(Queue **queueNode, int value)
+{
+    if (*queueNode == NULL)
+    {
+        return 0;
+    }
+
+    Queue *temp = (*queueNode);
+
+    while (temp != NULL)
+    {
+        if (temp->data == value)
+        {
+            return 1;
+        }
+        temp = temp->back;
+    }
+
+    return 0;
+}
+
+int queueSize(Queue **queueNode)
+{
+    Queue *temp = (*queueNode);
+
+    int counter = 0;
+
+    while (temp != NULL)
+    {
+        counter++;
+        temp = temp->back;
+    }
+
+    return counter;
+}
