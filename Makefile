@@ -26,6 +26,6 @@ dir:
 	mkdir -p $(TARGET_DIR)
 
 clean:
-	rm $(TARGET_DIR)/* $(OBJ_DIR)/*
+	rm -f $(TARGET_DIR)/* $(OBJ_DIR)/*
 
 .PHONY: run clean dir
