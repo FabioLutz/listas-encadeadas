@@ -4,10 +4,15 @@
 typedef struct Stack
 {
     int data;
-    struct Stack *top;
+    struct Stack *base;
 } Stack;
 
-Stack push(Stack **node, int value);
-Stack pop(Stack **node, int value);
+void createStack(Stack **stackNode, int value);
+void push(Stack **stackNode, int value);
+void pop(Stack **stackNode);
+void stackPeek(Stack **stackNode);
+int stackIsEmpty(Stack **stackNode);
+int stackContains(Stack **stackNode, int value);
+int stackSize(Stack **stackNode);
 
 #endif

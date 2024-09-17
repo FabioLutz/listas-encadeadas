@@ -3,6 +3,7 @@
 
 #include "linked_list.h"
 #include "queue.h"
+#include "stack.h"
 
 void executeLinkedList()
 {
@@ -70,7 +71,7 @@ void executeQueue()
             break;
 
         case 2:
-            peek(&queue);
+            queuePeek(&queue);
             break;
 
         case 3:
@@ -101,6 +102,59 @@ void executeQueue()
     } while (choice != 0);
 }
 
+void executeStack()
+{
+    int choice, value;
+
+    static Stack *stack = NULL;
+
+    do
+    {
+        printf("\n1 - Inserir valor\n2 - Imprimir valor do topo\n3 - Remover valor do topo\n4 - Verificar se está vazia");
+        printf("\n5 - Imprimir tamanho\n6 - Verificar se um valor está presente\n0 - Voltar\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("\nInsira o valor: ");
+            scanf("%d", &value);
+            push(&stack, value);
+            break;
+
+        case 2:
+            stackPeek(&stack);
+            break;
+
+        case 3:
+            pop(&stack);
+            break;
+
+        case 4:
+            printf("%s\n", stackIsEmpty(&stack) ? "Verdadeiro" : "Falso");
+            break;
+
+        case 5:
+            printf("%d\n", stackSize(&stack));
+            break;
+
+        case 6:
+            printf("\nInsira o valor: ");
+            scanf("%d", &value);
+            printf("%s\n", stackContains(&stack, value) ? "Verdadeiro" : "Falso");
+            break;
+
+        default:
+            if (choice != 0)
+            {
+                printf("\nValor inválido\n");
+            }
+            break;
+        }
+    } while (choice != 0);
+}
+
 int main()
 {
     int choice;
@@ -108,7 +162,7 @@ int main()
     do
     {
 
-        printf("\n1 - Lista Encadeada\n2 - Fila\n0 - Sair\n");
+        printf("\n1 - Lista Encadeada\n2 - Fila\n3 - Pilha\n0 - Sair\n");
         printf("Escolha uma opção: ");
         scanf("%d", &choice);
 
@@ -120,6 +174,10 @@ int main()
 
         case 2:
             executeQueue();
+            break;
+
+        case 3:
+            executeStack();
             break;
 
         default:

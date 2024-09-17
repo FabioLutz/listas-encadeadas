@@ -10,7 +10,7 @@ typedef struct Queue
 void createQueue(Queue **queueNode, int value);
 void enqueue(Queue **queueNode, int value);
 void dequeue(Queue **queueNode);
-void peek(Queue **queueNode);
+void queuePeek(Queue **queueNode);
 int queueIsEmpty(Queue **queueNode);
 int queueContains(Queue **queueNode, int value);
 int queueSize(Queue **queueNode);

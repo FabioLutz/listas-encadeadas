@@ -43,7 +43,7 @@ void dequeue(Queue **queueNode)
     return;
 }
 
-void peek(Queue **queueNode)
+void queuePeek(Queue **queueNode)
 {
     if (*queueNode != NULL)
     {
