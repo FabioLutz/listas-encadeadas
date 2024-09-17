@@ -3,16 +3,16 @@
 
 #include "linked_list.h"
 
-int main()
+void executeLinkedList()
 {
-    LinkedList *linkedList = NULL;
-
     int choice, value;
+
+    static LinkedList *linkedList = NULL;
 
     do
     {
-        printf("\n1 - Inserir valor\n2 - Imprimir lista\n3 - Remover valor\n4 - Verificar se está vazia\n0 - Sair");
-        printf("\nEscolha uma opção: ");
+        printf("\n1 - Inserir valor\n2 - Imprimir lista\n3 - Remover valor\n4 - Verificar se está vazia\n0 - Voltar\n");
+        printf("Escolha uma opção: ");
         scanf("%d", &choice);
 
         switch (choice)
@@ -44,5 +44,33 @@ int main()
             }
             break;
         }
+    } while (choice != 0);
+}
+
+int main()
+{
+    int choice;
+
+    do
+    {
+
+        printf("\n1 - Lista Encadeada\n0 - Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            executeLinkedList();
+            break;
+
+        default:
+            if (choice != 0)
+            {
+                printf("Valor inválido\n");
+            }
+            break;
+        }
+
     } while (choice != 0);
 }
